@@ -13,7 +13,6 @@ export default function Chats() {
   const socket = useRef();
   const navigate = useNavigate();
   const [contacts, setContacts] = useState([]);
-  const [groups, setGroups] = useState([]);
   const [currentUser, setCurrentUser] = useState(undefined);
   const [currentChat, setCurrentChat] = useState(undefined);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -35,7 +34,7 @@ export default function Chats() {
 
    useEffect(()=>{
     if(currentUser){
-      socket.current = io();
+      socket.current = io(host);
       socket.current.emit("add-user", currentUser._id);
     }
    },[currentUser]);
@@ -69,7 +68,7 @@ export default function Chats() {
   return (
     <Container>
       <div className="container">
-        <Contacts contacts={contacts} groups={groups} currentUser={currentUser}  changeChat={handleChatChange}/>
+        <Contacts contacts={contacts}  currentUser={currentUser}  changeChat={handleChatChange}/>
         { isLoaded &&
           currentChat === undefined ?
            <Welcome currentUser={currentUser}/> : 

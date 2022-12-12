@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import styled from "styled-components"
 import Logo from '../assets/logo.svg'
 
-export default function Contacts({ contacts, currentUser, changeChat, groups }) {
+export default function Contacts({ contacts, currentUser, changeChat }) {
     const [currentUserName, setCurrentUserName] = useState(undefined);
     const [currentUserImage, setCurrentUserImage] = useState(undefined);
     const [currentSelected, setCurrentSelected] = useState(undefined);
