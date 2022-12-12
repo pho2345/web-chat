@@ -27,6 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "https://chat-qw1q.onrender.com/",
   "eslintConfig": {
     "extends": [
       "react-app",
